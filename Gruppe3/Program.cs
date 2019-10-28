@@ -6,6 +6,8 @@ namespace Gruppe3
     {
         static void Main(string[] args)
         {
+            //Call til functions fil
+            bool answer = Functions.SendEmail();
             Console.WriteLine("Hello World!");
         }
     }
