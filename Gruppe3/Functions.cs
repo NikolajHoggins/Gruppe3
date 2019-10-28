@@ -1,9 +1,12 @@
 using System;
 
-namespace Functions
+namespace Gruppe3
 {
-    class Program
+    class Functions
     {
-       
+        public static bool SendEmail()
+        {
+            return false;
+        }
     }
 }
