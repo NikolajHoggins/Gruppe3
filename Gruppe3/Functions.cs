@@ -35,7 +35,7 @@ namespace Gruppe3
         }
 
         // This is for pulling the user data from the text file.
-        /*public static Array[] UserInfo()
+        public static string[] UserInfo()
         {
             string CurDir = System.IO.Directory.GetCurrentDirectory();
             string[] output = System.IO.File.ReadAllLines(@""+ CurDir +"/UserInfo.text"); // read all lines and put them in a new string called output.
