@@ -3,17 +3,17 @@
 
 
 Nikolaj:
--Send mails fra c#
+-Send mails fra c# //Big ass error skal fixes
 -Flot mail
 
 Magnus:
 -Python webscrape kiosk view.
 
 Jeppe:
--Program frontend
+-Frontend error handling (Tjek alt input)
 
 Klaus:
--Se godt ud
+-Se godt ud //done
 -Se mere godt ud
 
 Jens:
