@@ -30,7 +30,12 @@ namespace Gruppe3
             string CurDir = System.IO.Directory.GetCurrentDirectory(); // gets current directory.
             using System.IO.StreamWriter file =
                 new System.IO.StreamWriter(@""+ CurDir + "/UserInfo.text", true); // define the folder and file path.
-            file.WriteLine(info[0], info[1], info[3]); // write to the file. note this will add a new line after it has written all valuses.
+
+            foreach (var item in info)
+            {
+                file.Write(item+",");
+            }
+            file.Write("\n");// write to the file. note this will add a new line after it has written all valuses.
             Console.WriteLine("Write success! (i hope.)");
         }
 

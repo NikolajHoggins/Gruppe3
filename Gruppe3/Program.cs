@@ -2,13 +2,14 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace mailregextest
+namespace Gruppe3
 {
     class Program
     {
         static void Main(string[] args)
         {
             string[] info = Emails();
+            Functions.WriteInfo(info);
             foreach (var item in info)
             {
                 Console.WriteLine(item);
