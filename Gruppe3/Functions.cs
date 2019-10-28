@@ -5,13 +5,15 @@ namespace Gruppe3
 {
     class Functions
     {
-        public static bool SendEmail()
+        public static bool SendEmail(string reciever, string subject, string body = "")
         {
             string username = "niko9743@gmail.com";
-            SmtpClient mailClient = MailController.CreateConnection(username, "olivia75");
+            string password = "olivia75";
+
+            SmtpClient mailClient = MailController.CreateConnection(username, password);
             try
             {
-                mailClient.Send(MailController.CreateMail(username, "mollevip@gmail.com", "Dinmor", "Yeet nibba"));
+                mailClient.Send(MailController.CreateMail(username, reciever, subject, body));
                 return true;
             }
             catch (Exception ex)
