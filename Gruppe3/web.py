@@ -12,7 +12,6 @@ soup = BeautifulSoup(web.text, 'html5lib')
 rowspan = [0,0,0,0,0]
 lokaler = []
 array1 = []
-array2 = []
 
 # [1::]
 
