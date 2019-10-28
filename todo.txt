@@ -1,0 +1,20 @@
+//TODO:
+-Input fra python til C# skal til for at vi kan komme videre
+
+
+Nikolaj:
+-Send mails fra c#
+-Flot mail
+
+Magnus:
+-Python webscrape kiosk view.
+
+Jeppe:
+-Program frontend
+
+Klaus:
+-Se godt ud
+-Se mere godt ud
+
+Jens:
+-Email signup function
