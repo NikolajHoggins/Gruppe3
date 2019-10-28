@@ -9,6 +9,7 @@ namespace Gruppe3
         {
             SmtpClient mailClient = new SmtpClient(host);
             mailClient.Port = port;
+            mailClient.EnableSsl = true;
             mailClient.Credentials = new System.Net.NetworkCredential(username, password);
             return mailClient;
         }
