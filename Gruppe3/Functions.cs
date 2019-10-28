@@ -29,6 +29,7 @@ namespace Gruppe3
 
         public static Array UserInfo()
         {
+            string[] output = new string[3];
             return output;
         }
     }
