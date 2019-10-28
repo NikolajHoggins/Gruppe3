@@ -6,7 +6,8 @@ namespace Gruppe3
     {
         static void Main(string[] args)
         {
-            string[] info =  Emails();
+            bool answer = Functions.SendEmail();
+            //string[] info =  Emails();
         }
 
         static string[] Emails()
