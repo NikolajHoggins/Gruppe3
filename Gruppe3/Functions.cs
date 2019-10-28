@@ -22,14 +22,16 @@ namespace Gruppe3
             
         }
 
+        // Append user data to the file.
         public static void WriteInfo(string[] info)
         {
             using System.IO.StreamWriter file =
                 new System.IO.StreamWriter(@"Gruppe3\Gruppe3\UserInfo.text", true); // define the folder and file path.
-            file.WriteLine(info[0], info[1], info[3]); // write to the file.
+            file.WriteLine(info[0], info[1], info[3]); // write to the file. note this will add a new line after it has written all valuses.
             Console.WriteLine("Write success! (i hope.)");
         }
 
+        // This is for pulling the user data from the text file.
         public static Array[] UserInfo()
         {
             string[] output = System.IO.File.ReadAllLines(@"Gruppe3\Gruppe3\UserInfo.text"); // read all lines and put them in a new string called output.
