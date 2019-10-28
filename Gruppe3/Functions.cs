@@ -8,5 +8,15 @@ namespace Gruppe3
         {
             return false;
         }
+
+        public static void WriteInfo()
+        {
+            
+        }
+
+        public static Array UserInfo()
+        {
+            return output;
+        }
     }
 }
