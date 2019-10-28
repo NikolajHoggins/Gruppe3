@@ -9,7 +9,7 @@ namespace Gruppe3
             return false;
         }
 
-        public static void WriteInfo()
+        public static void WriteInfo(string[] info)
         {
             
         }
