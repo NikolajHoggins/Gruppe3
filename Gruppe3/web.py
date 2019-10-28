@@ -10,27 +10,94 @@ urllib3.disable_warnings()
 web = requests.get('https://mars.tekkom.dk/mrbs/dayFull.php', verify=False)
 
 soup = BeautifulSoup(web.text, 'html5lib')
+   
+
+lokaler = []
+array1 = []
+array2 = []
+array3 = []
+array4 = []
+array5 = []
+array6 = []
+array7 = []
+array8 = []
+
+# [1::]
+
+for header in soup.thead.find_all("tr")[0].find_all("th"):
+    lokaler.append(header.text.rstrip("\n\r"))
+print(len(lokaler))
 
 
-for item in soup.find_all("td",{'class':"B"}):
-    print(item.text.replace(' ', ''))
-    
+for row in soup.tbody.find_all("tr")[0].find_all("td"):
+    if len(row.text.rstrip("\n\r")) > 3:
+        print(row.text.rstrip("\n\r"))
+        array1.append(row.text.rstrip("\n\r"))
+    else:
+        print("x")
+        array1.append("X")
+print(len(array1))
 
+for row in soup.tbody.find_all("tr")[1].find_all("td"):
+    if len(row.text.rstrip("\n\r")) > 3:
+        print(row.text.rstrip("\n\r"))
+        array2.append(row.text.rstrip("\n\r"))
+    else:
+        print("x")
+        array2.append("X")
+print(len(array2))
 
-# for elev_id in soup.find_all('table', attrs={'style':'margin-left:50px;margin-right:50px;'})[0].find_all('a', href=True):
-#     nElev_id = elev_id['href'].replace('elev_visning.php?elevid=', '')
-#     nnElev_id = nElev_id.replace(' ', '')
-#     elevId.append(nnElev_id)
+for row in soup.tbody.find_all("tr")[2].find_all("td"):
+    if len(row.text.rstrip("\n\r")) > 3:
+        print(row.text.rstrip("\n\r"))
+        array3.append(row.text.rstrip("\n\r"))
+    else:
+        print("x")
+        array3.append("X")
+print(len(array3))
 
+for row in soup.tbody.find_all("tr")[3].find_all("td"):
+    if len(row.text.rstrip("\n\r")) > 3:
+        print(row.text.rstrip("\n\r"))
+        array4.append(row.text.rstrip("\n\r"))
+    else:
+        print("x")
+        array4.append("X")
+print(len(array4))
 
-# for table in soup.find_all('table', attrs={'style':'margin-left:50px;margin-right:50px;'})[0].find_all('a'):
-#     tableList.append(table.get_text())
+for row in soup.tbody.find_all("tr")[4].find_all("td"):
+    if len(row.text.rstrip("\n\r")) > 3:
+        print(row.text.rstrip("\n\r"))
+        array5.append(row.text.rstrip("\n\r"))
+    else:
+        print("x")
+        array5.append("X")
+print(len(array5))
 
-# for font in soup.find_all('table', attrs={'style':'margin-left:50px;margin-right:50px;'})[0].find_all('font'):
-#     fontList.append(font.get_text())
+for row in soup.tbody.find_all("tr")[5].find_all("td"):
+    if len(row.text.rstrip("\n\r")) > 3:
+        print(row.text.rstrip("\n\r"))
+        array6.append(row.text.rstrip("\n\r"))
+    else:
+        print("x")
+        array6.append("X")
+print(len(array6))
 
-# for items in range(len(tableList)):
-#   web = "https://mercantec.dev/update-elev/{}/{}/{}".format(elevId[items], tableList[items], fontList[items])
-#   check = requests.get(web, verify=False)
-#   if "Elev updated" in check.text:
-#     print(elevId[items] + " " + tableList[items] + " " + fontList[items] + "<br>")
+for row in soup.tbody.find_all("tr")[6].find_all("td"):
+    if len(row.text.rstrip("\n\r")) > 3:
+        print(row.text.rstrip("\n\r"))
+        array7.append(row.text.rstrip("\n\r"))
+    else:
+        print("x")
+        array7.append("X")
+print(len(array7))
+
+for row in soup.tbody.find_all("tr")[7].find_all("td"):
+    if len(row.text.rstrip("\n\r")) > 3:
+        print(row.text.rstrip("\n\r"))
+        array8.append(row.text.rstrip("\n\r"))
+    else:
+        
+        print("x")
+        array8.append("X")
+print(len(array8))
