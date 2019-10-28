@@ -27,6 +27,7 @@ namespace Gruppe3
             using System.IO.StreamWriter file =
                 new System.IO.StreamWriter(@"Gruppe3\Gruppe3\UserInfo.text", true); // define the folder and file path.
             file.WriteLine(info[0], info[1], info[3]); // write to the file.
+            Console.WriteLine("Write success! (i hope.)");
         }
 
         public static Array UserInfo()
