@@ -30,7 +30,7 @@ namespace Gruppe3
             Console.WriteLine("Write success! (i hope.)");
         }
 
-        public static Array UserInfo()
+        public static Array[] UserInfo()
         {
             string[] output = System.IO.File.ReadAllLines(@"Gruppe3\Gruppe3\UserInfo.text"); // read all lines and put them in a new string called output.
             return output;
