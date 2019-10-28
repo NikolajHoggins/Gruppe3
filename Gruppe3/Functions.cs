@@ -21,5 +21,15 @@ namespace Gruppe3
             }
             
         }
+
+        public static void WriteInfo(string[] info)
+        {
+            
+        }
+
+        public static Array UserInfo()
+        {
+            return output;
+        }
     }
 }

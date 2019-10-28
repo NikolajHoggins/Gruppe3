@@ -6,21 +6,21 @@ namespace Gruppe3
     {
         static void Main(string[] args)
         {
-            //Call til functions fil
-            bool answer = Functions.SendEmail();
-            Console.WriteLine("Hello World!");
+            string[] info =  Emails();
         }
 
-        static string Emails()
+        static string[] Emails()
         {
             Console.WriteLine("Sign up for emails with your classroom");
             Console.Write("Enter name: ");
-            string nameToLower = Console.ReadLine().ToLower();
+            string name = Console.ReadLine().ToLower().Trim();
             Console.Write("Enter email: " );
-            string email = Console.ReadLine();
-
-
-            return nameToLower;
+            string email = Console.ReadLine().ToLower().Trim();
+            Console.WriteLine("Courses: h1, h2, h3, h4, h5, h6");
+            Console.Write("Enter course: ");
+            string course = Console.ReadLine().ToLower().Trim();
+            string[] info = { name, email, course}; 
+            return info;
         }
 
     }

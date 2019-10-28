@@ -12,8 +12,8 @@ web = requests.get('https://mars.tekkom.dk/mrbs/dayFull.php', verify=False)
 soup = BeautifulSoup(web.text, 'html5lib')
 
 
-print(soup.html)
-
+for item in soup.find_all("td",{'class':"B"}):
+    print(item.a.get_text())
 
 
 # for elev_id in soup.find_all('table', attrs={'style':'margin-left:50px;margin-right:50px;'})[0].find_all('a', href=True):
