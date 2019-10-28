@@ -13,7 +13,8 @@ soup = BeautifulSoup(web.text, 'html5lib')
 
 
 for item in soup.find_all("td",{'class':"B"}):
-    print(item.a.get_text())
+    print(item.text.replace(' ', ''))
+    
 
 
 # for elev_id in soup.find_all('table', attrs={'style':'margin-left:50px;margin-right:50px;'})[0].find_all('a', href=True):
