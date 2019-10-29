@@ -1,5 +1,6 @@
 using System;
 using System.Net.Mail;
+using System.Net.Http;
 
 namespace Gruppe3
 {
@@ -45,6 +46,29 @@ namespace Gruppe3
             string CurDir = System.IO.Directory.GetCurrentDirectory();
             string[] output = System.IO.File.ReadAllLines(@""+ CurDir +"/UserInfo.text"); // read all lines and put them in a new string called output.
             return output;
+        }
+
+        private static readonly HttpClient client = new HttpClient();
+
+        public static string HttpGetRequest()
+        {
+            var responseString = await client.GetStringAsync("http://www.example.com/recepticle.aspx");
+            return responseString;
+        }
+
+        public static string HttpPostRequest() // if this is not what you were looking for dellet it.
+        {
+            var values = new Dictionary<string, string>
+            {
+            { "thing1", "hello" },
+            { "thing2", "world" }
+            };
+
+            var content = new FormUrlEncodedContent(values);
+
+            var response = await client.PostAsync("http://www.example.com/recepticle.aspx", content);
+
+            var responseString = await response.Content.ReadAsStringAsync();
         }
     }
 }
