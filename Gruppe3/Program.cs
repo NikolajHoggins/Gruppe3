@@ -37,14 +37,7 @@ namespace Gruppe3
                 {
                     isRunning = false;
                 }
-            }
-            
-            /*string[] info = Emails();
-            Functions.WriteInfo(info);
-            foreach (var item in info)
-            {
-                Console.WriteLine(item);
-            }  */
+            } 
         }
 
         static string[] Emails()
