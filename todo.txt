@@ -3,18 +3,17 @@
 
 
 Nikolaj:
--Send mails fra c# //Big ass error skal fixes
--Flot mail
+-Gemt signups i json
+-Importering af json (signup data og webscrape)
 
 Magnus:
--Python webscrape kiosk view.
+-Save data as json
 
 Jeppe:
--Frontend error handling (Tjek alt input)
+-regex to remove special characters from names
 
 Klaus:
--Se godt ud //done
--Se mere godt ud
+-Dø
 
 Jens:
--Email signup function
+-Current directory
