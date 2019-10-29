@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import requests
 
 urllib3.disable_warnings()
-web = requests.get('https://mars.tekkom.dk/mrbs/dayFull.php', verify=False)
+web = requests.get('https://mars.tekkom.dk/mrbs/dayFull.php?area=4&room=40&year=2019&month=10&day=30', verify=False)
 soup = BeautifulSoup(web.text, 'html5lib')
 
 errors = []
@@ -29,18 +29,34 @@ for header in soup.thead.find_all("tr")[0].find_all("th"):
 
 # Row 1
 row1 = 0
-for row in soup.tbody.find_all("tr")[0].find_all("td"):
-
-    if row.attrs.get("rowspan") != None:
-        rowspan[row1] += int(row.attrs.get("rowspan"))
-
-    print(row.text.replace('\n',''))
-    array1.append(row.text.replace('\n',''))
-    
-    if rowspan[row1] != 0:
-        rowspan[row1] += -1
+for x in rowspan:
+    try:
+        s = soup.tbody.find_all("tr")[0].find_all("td")[row1]
+        if rowspan[row1] != 0:
+            rowspan[row1] += -1
+            if row1 != 3:
+                print("x")
+                array1.append("x")
+        if s.attrs.get("rowspan") != None:
+            rowspan[row1] += int(s.attrs.get("rowspan"))
+        if s.text.replace('\n','') != "":
+            print(s.text.replace('\n',''))
+            array1.append(s.text.replace('\n',''))
+        else:
+            if len(array1) == 5:
+                errors.append("Error")
+            else:
+                print("x")
+                array1.append("x")
+    except:
+        if len(array1) != 5:
+            if len(array1) >= 5:
+                errors.append("Error")
+            else:
+                print("x")
+                array1.append("x") 
+        errors.append("Error")
     row1+=1
-
 print("-------------------------")
 print(len(array1))
 print("")
@@ -52,8 +68,9 @@ for x in rowspan:
         s = soup.tbody.find_all("tr")[1].find_all("td")[row2]
         if rowspan[row2] != 0:
             rowspan[row2] += -1
-            print("x")
-            array2.append("x")
+            if row2 != 3:
+                print("x")
+                array2.append("x")
         if s.attrs.get("rowspan") != None:
             rowspan[row2] += int(s.attrs.get("rowspan"))
         if s.text.replace('\n','') != "":
@@ -85,8 +102,9 @@ for x in rowspan:
         s = soup.tbody.find_all("tr")[2].find_all("td")[row3]
         if rowspan[row3] != 0:
             rowspan[row3] += -1
-            print("x")
-            array3.append("x")
+            if row3 != 3:
+                print("x")
+                array3.append("x")
         if s.attrs.get("rowspan") != None:
             rowspan[row3] += int(s.attrs.get("rowspan"))
         if s.text.replace('\n','') != "":
@@ -118,8 +136,9 @@ for x in rowspan:
         s = soup.tbody.find_all("tr")[3].find_all("td")[row4]
         if rowspan[row4] != 0:
             rowspan[row4] += -1
-            print("x")
-            array4.append("x")
+            if row4 != 3:
+                print("x")
+                array4.append("x")
         if s.attrs.get("rowspan") != None:
             rowspan[row4] += int(s.attrs.get("rowspan"))
         if s.text.replace('\n','') != "":
@@ -151,8 +170,9 @@ for x in rowspan:
         s = soup.tbody.find_all("tr")[4].find_all("td")[row5]
         if rowspan[row5] != 0:
             rowspan[row5] += -1
-            print("x")
-            array5.append("x")
+            if row5 != 3:
+                print("x")
+                array5.append("x")
         if s.attrs.get("rowspan") != None:
             rowspan[row5] += int(s.attrs.get("rowspan"))
         if s.text.replace('\n','') != "":
@@ -184,8 +204,9 @@ for x in rowspan:
         s = soup.tbody.find_all("tr")[5].find_all("td")[row6]
         if rowspan[row6] != 0:
             rowspan[row6] += -1
-            print("x")
-            array6.append("x")
+            if row6 != 3:
+                print("x")
+                array6.append("x")
         if s.attrs.get("rowspan") != None:
             rowspan[row6] += int(s.attrs.get("rowspan"))
         if s.text.replace('\n','') != "":
@@ -217,8 +238,9 @@ for x in rowspan:
         s = soup.tbody.find_all("tr")[6].find_all("td")[row7]
         if rowspan[row7] != 0:
             rowspan[row7] += -1
-            print("x")
-            array7.append("x")
+            if row7 != 3:
+                print("x")
+                array7.append("x")
         if s.attrs.get("rowspan") != None:
             rowspan[row7] += int(s.attrs.get("rowspan"))
         if s.text.replace('\n','') != "":
@@ -250,8 +272,9 @@ for x in rowspan:
         s = soup.tbody.find_all("tr")[7].find_all("td")[row8]
         if rowspan[row8] != 0:
             rowspan[row8] += -1
-            print("x")
-            array8.append("x")
+            if row8 != 3:
+                print("x")
+                array8.append("x")
         if s.attrs.get("rowspan") != None:
             rowspan[row8] += int(s.attrs.get("rowspan"))
         if s.text.replace('\n','') != "":
