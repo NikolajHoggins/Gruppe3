@@ -1,6 +1,8 @@
 using System;
 using System.Net.Mail;
 using System.Net.Http;
+using System.Net;
+using System.IO;
 
 namespace Gruppe3
 {
@@ -50,13 +52,26 @@ namespace Gruppe3
 
         private static readonly HttpClient client = new HttpClient();
 
-        public static string HttpGetRequest()
+        public static string AddUser(string[] info)
         {
-            var responseString = await client.GetStringAsync("http://www.example.com/recepticle.aspx");
-            return responseString;
+            string requesturl = $"https://nikolaj.bricksite.net/adduser/{info[1]}/{info[0]}/{info[2]}";
+            string html = string.Empty;
+            string url = requesturl;
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.AutomaticDecompression = DecompressionMethods.GZip;
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            using (Stream stream = response.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                html = reader.ReadToEnd();
+            }
+
+            return html;
         }
 
-        public static string HttpPostRequest() // if this is not what you were looking for dellet it.
+        /*public static string HttpPostRequest() // if this is not what you were looking for dellet it.
         {
             var values = new Dictionary<string, string>
             {
@@ -69,6 +84,8 @@ namespace Gruppe3
             var response = await client.PostAsync("http://www.example.com/recepticle.aspx", content);
 
             var responseString = await response.Content.ReadAsStringAsync();
-        }
+        }*/
+
+        //public static void S
     }
 }

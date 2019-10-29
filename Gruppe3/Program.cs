@@ -6,8 +6,7 @@ namespace Gruppe3
     class Program
     {
         static void Main(string[] args)
-        {
-
+        { 
             bool isRunning = true;
             while (isRunning)
             {
@@ -24,7 +23,7 @@ namespace Gruppe3
                 if (number == "1")
                 {
                     string[] signupInfo = Emails();
-                    Console.WriteLine(JSONHandler.WriteJson(1, signupInfo));
+                    Console.WriteLine(Functions.AddUser(signupInfo)); 
                     Console.ReadLine();
                     Console.Clear();
                 }
@@ -39,19 +38,13 @@ namespace Gruppe3
                 }
             }
             
-            /*string[] info = Emails();
-            Functions.WriteInfo(info);
-            foreach (var item in info)
-            {
-                Console.WriteLine(item);
-            }  */
         }
 
         static string[] Emails()
         {
             Console.WriteLine("Sign up for emails, to get notified with classroom location");
             Console.Write("Enter name: ");
-            string name = Console.ReadLine().ToLower().Trim();
+            string name = Console.ReadLine().Trim();
             IsValidName(name);
             while (IsValidName(name) != true)
             {

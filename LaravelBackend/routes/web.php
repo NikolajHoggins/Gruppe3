@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome')->with('users', \App\User::all());
 });
 
 Route::get('/adduser/{email}/{name}/{hoved}', 'UserHandler@CreateUser');
