@@ -36,8 +36,7 @@ namespace Gruppe3
                 {
                     isRunning = false;
                 }
-            }
-            
+            } 
         }
 
         static string[] Emails()
