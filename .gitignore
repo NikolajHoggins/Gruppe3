@@ -335,15 +335,15 @@ ASALocalRun/
 
 
 #Laravel shit
-./LaravelBackend/node_modules
-./LaravelBackend/public/hot
-./LaravelBackend/public/storage
-./LaravelBackend/storage/*.key
-./LaravelBackend/vendor
-./LaravelBackend/.env
-./LaravelBackend/.env.backup
-./LaravelBackend/.phpunit.result.cache
-./LaravelBackend/Homestead.json
-./LaravelBackend/Homestead.yaml
-./LaravelBackend/npm-debug.log
-./LaravelBackend/yarn-error.log
+Gruppe3/LaravelBackend/node_modules
+Gruppe3/LaravelBackend/public/hot
+Gruppe3/LaravelBackend/public/storage
+Gruppe3/LaravelBackend/storage/*.key
+Gruppe3/LaravelBackend/vendor
+Gruppe3/LaravelBackend/.env
+Gruppe3/LaravelBackend/.env.backup
+Gruppe3/LaravelBackend/.phpunit.result.cache
+Gruppe3/LaravelBackend/Homestead.json
+Gruppe3/LaravelBackend/Homestead.yaml
+Gruppe3/LaravelBackend/npm-debug.log
+Gruppe3/LaravelBackend/yarn-error.log

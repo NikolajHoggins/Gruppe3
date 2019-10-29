@@ -3,23 +3,20 @@
 
 
 Nikolaj:
--Gemt signups i json
+-Setup laravel
 -Importering af json (signup data og webscrape)
--JsonHandler class
 
 Magnus:
--Save data as json
+-SOv
 
 Jeppe:
--Lav programmet til et evigt loop
--Lav mulighed for signoff
--regex to remove special characters from names
+-CLI Skema
 
 Klaus:
--Dø
+-respawn
 
 Jens:
--Current directory
+-Test httprequest
 
 // for curdir.
-System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
+Directory.GetCurrentDirectory()

@@ -23,7 +23,9 @@ namespace Gruppe3
                 Console.Clear();
                 if (number == "1")
                 {
-                    Emails();
+                    string[] signupInfo = Emails();
+                    Console.WriteLine(JSONHandler.WriteJson(1, signupInfo));
+                    Console.ReadLine();
                     Console.Clear();
                 }
                 else if (number == "2")
