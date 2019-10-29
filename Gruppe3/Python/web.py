@@ -25,7 +25,7 @@ array8 = []
 
 # Header
 for header in soup.thead.find_all("tr")[0].find_all("th"):
-    lokaler.append(header.text.rstrip("\n\r").replace(" ", ""))
+    lokaler.append(header.text.replace('\n','').replace(" ", ""))
 
 # Row 1
 row1 = 0
