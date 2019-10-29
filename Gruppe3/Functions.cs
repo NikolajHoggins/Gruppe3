@@ -1,5 +1,6 @@
 using System;
 using System.Net.Mail;
+using System.Net.Http;
 
 namespace Gruppe3
 {
@@ -45,6 +46,14 @@ namespace Gruppe3
             string CurDir = System.IO.Directory.GetCurrentDirectory();
             string[] output = System.IO.File.ReadAllLines(@""+ CurDir +"/UserInfo.text"); // read all lines and put them in a new string called output.
             return output;
+        }
+
+        private static readonly HttpClient client = new HttpClient();
+
+        public static string HttpGetRequest()
+        {
+            var responseString = await client.GetStringAsync("http://www.example.com/recepticle.aspx");
+            return responseString;
         }
     }
 }
