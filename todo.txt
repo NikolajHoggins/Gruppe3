@@ -5,11 +5,14 @@
 Nikolaj:
 -Gemt signups i json
 -Importering af json (signup data og webscrape)
+-JsonHandler class
 
 Magnus:
 -Save data as json
 
 Jeppe:
+-Lav programmet til et evigt loop
+-Lav mulighed for signoff
 -regex to remove special characters from names
 
 Klaus:
