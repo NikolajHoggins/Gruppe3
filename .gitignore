@@ -330,3 +330,20 @@ ASALocalRun/
 .mfractor/
 
 \.vscode/launch\.json
+
+
+
+
+#Laravel shit
+./LaravelBackend/node_modules
+./LaravelBackend/public/hot
+./LaravelBackend/public/storage
+./LaravelBackend/storage/*.key
+./LaravelBackend/vendor
+./LaravelBackend/.env
+./LaravelBackend/.env.backup
+./LaravelBackend/.phpunit.result.cache
+./LaravelBackend/Homestead.json
+./LaravelBackend/Homestead.yaml
+./LaravelBackend/npm-debug.log
+./LaravelBackend/yarn-error.log
