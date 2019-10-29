@@ -20,3 +20,6 @@ Klaus:
 
 Jens:
 -Current directory
+
+// for curdir.
+System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location)
