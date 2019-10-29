@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace Gruppe3
@@ -8,12 +7,42 @@ namespace Gruppe3
     {
         static void Main(string[] args)
         {
-            string[] info = Emails();
+
+            bool isRunning = true;
+            while (isRunning)
+            {
+                Console.WriteLine("============================================================");
+                Console.WriteLine("Email notification with class room for your course!");
+                Console.WriteLine("============================================================");
+                Console.WriteLine("Enter the number to subscribe, unsubscribe or exit the app");
+                Console.WriteLine("[1] Subscribe");
+                Console.WriteLine("[2] Unsubscribe");
+                Console.WriteLine("[3] Exit the app");
+                Console.WriteLine("============================================================");
+                string number = TryToParse(Console.ReadLine());
+                Console.Clear();
+                if (number == "1")
+                {
+                    Emails();
+                    Console.Clear();
+                }
+                else if (number == "2")
+                {
+                    Unsub();
+                    Console.Clear();
+                }
+                else if (number == "3")
+                {
+                    isRunning = false;
+                }
+            }
+            
+            /*string[] info = Emails();
             Functions.WriteInfo(info);
             foreach (var item in info)
             {
                 Console.WriteLine(item);
-            }
+            }  */
         }
 
         static string[] Emails()
@@ -21,6 +50,16 @@ namespace Gruppe3
             Console.WriteLine("Sign up for emails, to get notified with classroom location");
             Console.Write("Enter name: ");
             string name = Console.ReadLine().ToLower().Trim();
+            IsValidName(name);
+            while (IsValidName(name) != true)
+            {
+                if (IsValidName(name) == false)
+                {
+                    Console.WriteLine("Name invalid!");
+                    Console.Write("Enter name: ");
+                    name = Console.ReadLine().ToLower().Trim();
+                }
+            }
             Console.Write("Enter email: ");
             string email = Console.ReadLine().ToLower().Trim();
             IsValidEmail(email);
@@ -92,6 +131,52 @@ namespace Gruppe3
             {
                 Console.WriteLine("Invalid input");
                 return "invalid";
+            }
+        }
+
+        static bool IsValidName(string inputName)
+        {
+            string strRegex = @"^[a-zA-Z]+$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputName))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        static string Unsub()
+        {
+            Console.WriteLine("unsubcribe emails");
+            Console.Write("Enter email: ");
+            string email = Console.ReadLine().ToLower().Trim();
+            IsValidEmail(email);
+            while (IsValidEmail(email) != true)
+            {
+                if (IsValidEmail(email) == false)
+                {
+                    Console.WriteLine("Email invalid!");
+                    Console.Write("Enter email: ");
+                    email = Console.ReadLine().ToLower().Trim();
+                }
+            }
+            return email;
+        }
+
+        static string TryToParse(string parseString)
+        {
+            bool result = Int32.TryParse(parseString, out int j);
+            if (result == true)
+            {
+                return parseString;
+            }
+            else
+            {
+                return ("Did you type 1, 2 or 3? Try again!");
+                
             }
         }
     }
