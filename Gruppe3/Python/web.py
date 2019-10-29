@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 import requests
 
 urllib3.disable_warnings()
-web = requests.get('https://mars.tekkom.dk/mrbs/dayFull.php?area=4&room=40&year=2019&month=10&day=30', verify=False)
+web = requests.get('https://mars.tekkom.dk/mrbs/dayFull.php', verify=False)
 soup = BeautifulSoup(web.text, 'html5lib')
 
 errors = []
