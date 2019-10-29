@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/adduser/{email}/{name}/{hoved}', 'UserHandler@CreateUser');
+Route::get('/getusers/{token}/', 'UserHandler@GetUsers');
+Route::get('/getuser/{token}/{email}', 'UserHandler@GetUser');
+
