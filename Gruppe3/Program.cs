@@ -136,7 +136,7 @@ namespace Gruppe3
 
         static bool IsValidName(string inputName)
         {
-            string strRegex = @"^[a-zA-Z]+$";
+            string strRegex = @"^[a-zA-Z\s]+$";
             Regex re = new Regex(strRegex);
             if (re.IsMatch(inputName))
             {
