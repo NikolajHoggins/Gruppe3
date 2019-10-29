@@ -1,4 +1,5 @@
 # [1::]
+import json
 import urllib3
 from bs4 import BeautifulSoup
 import requests
@@ -274,3 +275,8 @@ for x in rowspan:
 print("-------------------------")
 print(len(array8))
 print("")
+
+
+
+with open('Gruppe3/Python/data.json', 'w') as f:
+    json.dump((lokaler, array1, array2, array3, array4, array5, array6, array7, array8), f)
