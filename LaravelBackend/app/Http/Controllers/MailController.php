@@ -23,7 +23,7 @@ class MailController
     {
         $usermail = $user->mail;
         $username = $user->name;
-
+        dd($usermail);
         $mail = new PHPMailer();
         try {
             //Server settings
