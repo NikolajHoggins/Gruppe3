@@ -29,7 +29,7 @@ namespace Gruppe3
         }
         public static string AddUser(string[] info)
         {
-            string requesturl = $"https://nikolaj.bricksite.net/adduser/{info[1]}/{info[0]}/{info[2]}";
+            string requesturl = $"https://nikolaj.bricksite.net/adduser/{info[0]}/{info[1]}/{info[2]}";
             string html = string.Empty;
             string url = requesturl;
 
@@ -46,28 +46,6 @@ namespace Gruppe3
             return html;
         }
 
-        public static string GetUsers(string hoved)
-        {
-            string requesturl = $"https://nikolaj.bricksite.net/getusergroup/asasds/{hoved}";
-            string html = string.Empty;
-            string url = requesturl;
-
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.AutomaticDecompression = DecompressionMethods.GZip;
-
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            using (Stream stream = response.GetResponseStream())
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                html = reader.ReadToEnd();
-            }
-            foreach (var item in html)
-            {
-                Console.WriteLine(item);
-            }
-            
-            return html;
-        }
         //public static void S
     }
 }
