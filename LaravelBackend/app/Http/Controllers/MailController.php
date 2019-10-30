@@ -32,7 +32,7 @@ class MailController
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
             $mail->isSMTP();                                            // Send using SMTP
             $mail->Port       = 587;                                    // TCP port to connect to
-            $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+            $mail->Host       = env('MAIL_HOST');                    // Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
             $mail->Username   = env('MAIL_USERNAME');                     // SMTP username
             $mail->Password   = env('MAIL_PASSWORD');                               // SMTP password

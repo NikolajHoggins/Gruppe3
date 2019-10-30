@@ -7,8 +7,6 @@ namespace Gruppe3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Functions.GetUsers("h1"));
-            Console.ReadKey();
             bool isRunning = true;
             while (isRunning)
             {
