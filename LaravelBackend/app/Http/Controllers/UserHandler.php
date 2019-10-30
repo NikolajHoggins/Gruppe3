@@ -12,9 +12,9 @@ class UserHandler extends Controller
         
     //
     public function CreateUser(Request $request){
-        if($request['token'] != $apikey){
+        /*if($request['token'] != $apikey){
             return "API-KEY not valid";
-        }
+        }*/
         $user = new User;
         $user->email = $request['email'];
         $user->name = $request['name'];
