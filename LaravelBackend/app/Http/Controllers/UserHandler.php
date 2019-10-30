@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-
+use App\Lektion;
+use Illuminate\Support\Facades\DB;
 
 class UserHandler extends Controller
 {
-    private $apikey = '&ZLJ6ce6mUB45^NsYsd&$AJYv8TRMZQN';    
+        
     //
     public function CreateUser(Request $request){
         if($request['token'] != $apikey){
@@ -26,5 +27,23 @@ class UserHandler extends Controller
             return "API-KEY not valid";
         }
         return User::all();
+    }
+    public function GetUserGroup(Request $request){
+        $useremails = DB::table('users')->select('email', 'name')->where('hoved', $request['hoved'])->get();
+        $emails = [];
+        foreach($useremails as $email){
+            array_push($emails, $email->email);
+        }
+        return $useremails;
+        //User::all()->select('email')->where('hoved', $request['hoved'])[0];
+    }
+
+    public function AddClass(Request $request){
+        $class = new Lektion;
+        $class->name = $request['name'];
+        $class->hoved = $request['hoved'];
+        $class->location = $request['location'];
+        $class->hour = $request['hour'];
+        $class->save();
     }
 }

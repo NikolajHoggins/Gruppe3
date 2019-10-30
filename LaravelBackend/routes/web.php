@@ -17,5 +17,6 @@ Route::get('/', function () {
 
 Route::get('/adduser/{name}/{email}/{hoved}', 'UserHandler@CreateUser');
 Route::get('/getusers/{token}/', 'UserHandler@GetUsers');
-Route::get('/getuser/{token}/{email}', 'UserHandler@GetUser');
+Route::get('/getusergroup/{token}/{hoved}', 'UserHandler@GetUserGroup');
+Route::get('/addclass/{token}/{hoved}/{hour}/{location}/{name}', 'UserHandler@AddClass');
 
