@@ -15,7 +15,7 @@ class MailController
             $hoved = $lektion->hoved;
             $users = \App\User::all()->where('hoved', $hoved);
             foreach($users as $user){
-                this.SendMail($user, $lektion);
+                MailController.SendMail($user, $lektion);
             }
         }
     }
