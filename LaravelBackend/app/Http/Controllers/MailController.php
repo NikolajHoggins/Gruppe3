@@ -24,7 +24,7 @@ class MailController
     }
     public function SendMail($user, $lektion)
     {
-        $usermail = $user->mail;
+        $usermail = $user->email;
         $username = $user->name;
         $mail = new PHPMailer();
         try {
@@ -43,8 +43,8 @@ class MailController
             $mail->addAddress($usermail, $username);     // Add a recipient
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Hi '.$username.' NOGGA';
-            $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+            $mail->Subject = $lektion->location.': '.$lektion->name.' at '.$lektion->hour;
+            $mail->Body = 'Hi '.$username.'. <br>You have '.$lektion->name.' at '.$lektion->hour.' in '.$lektion->loaction;
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
         
             $mail->send();
