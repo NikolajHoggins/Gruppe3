@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+use Illuminate\Support\Facades\DB;
 
 require __DIR__.'/../../../vendor/autoload.php';
 
