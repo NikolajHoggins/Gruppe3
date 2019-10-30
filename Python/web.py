@@ -21,7 +21,7 @@ array7 = []
 array8 = []
 
 
-
+print("")
 
 # Header
 for header in soup.thead.find_all("tr")[0].find_all("th"):
@@ -58,7 +58,7 @@ for x in rowspan:
         errors.append("Error")
     row1+=1
 print("-------------------------")
-print(len(array1))
+# print(len(array1))
 print("")
 
 # Row 2
@@ -92,7 +92,7 @@ for x in rowspan:
         errors.append("Error")
     row2+=1
 print("-------------------------")
-print(len(array2))
+# print(len(array2))
 print("")
 
 # Row 3
@@ -126,7 +126,7 @@ for x in rowspan:
         errors.append("Error")
     row3+=1
 print("-------------------------")
-print(len(array3))
+# print(len(array3))
 print("")
 
 # Row 4
@@ -160,7 +160,7 @@ for x in rowspan:
         errors.append("Error")
     row4+=1
 print("-------------------------")
-print(len(array4))
+# print(len(array4))
 print("")
 
 # Row 5
@@ -194,7 +194,7 @@ for x in rowspan:
         errors.append("Error")
     row5+=1
 print("-------------------------")
-print(len(array5))
+# print(len(array5))
 print("")
 
 # Row 6
@@ -228,7 +228,7 @@ for x in rowspan:
         errors.append("Error")
     row6+=1
 print("-------------------------")
-print(len(array6))
+# print(len(array6))
 print("")
 
 # Row 7
@@ -262,7 +262,7 @@ for x in rowspan:
         errors.append("Error")
     row7+=1
 print("-------------------------")
-print(len(array7))
+# print(len(array7))
 print("")
 
 # Row 8
@@ -296,7 +296,7 @@ for x in rowspan:
         errors.append("Error")
     row8+=1
 print("-------------------------")
-print(len(array8))
+# print(len(array8))
 print("")
 
 
