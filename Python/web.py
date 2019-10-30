@@ -305,4 +305,4 @@ print("")
 
 
 with open('Python/data.json', 'w') as f:
-    json.dump((lokaler, array1, array2, array3, array4, array5, array6, array7, array8), f)
+    # json.dump((lokaler, array1, array2, array3, array4, array5, array6, array7, array8), f)
