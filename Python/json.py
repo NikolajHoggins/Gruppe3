@@ -8,14 +8,22 @@ urllib3.disable_warnings()
 web = requests.get('https://mars.tekkom.dk/mrbs/json.php', verify=False)
 json_string = json.loads(web.text)
 
-laravel = "http://nikolaj.bricksite.net/addclass/{token}/{hoved}/{hour}/{location}/{name}"
+token = "x"
+laravel = "http://nikolaj.bricksite.net"
 
 
 for x in json_string:
-    requests.get('https://mars.tekkom.dk/mrbs/json.php', verify=False)
-    print("")
-    print(x["name"])
-    print(x["type"])
-    print(x["time"])
-    print(x["room"])
-    print("-------------------------")
+    hovedforlob = {
+        "A": "anden",
+        "B": "h1",
+        "C": "h2",
+        "D": "h3",
+        "E": "h4",
+        "F": "h5",
+        "G": "h6",
+        "H": "gf1",
+        "I": "gf2",
+        "J": "amu"
+    }
+    json_request = "/addclass/{}/{}/{}/{}/{}".format(token, hovedforlob.get(x["type"], "None"), x["time"], x["room"], x["name"])
+    requests.get(laravel + json_request)
