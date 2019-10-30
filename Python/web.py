@@ -26,6 +26,9 @@ print("")
 # Header
 for header in soup.thead.find_all("tr")[0].find_all("th"):
     lokaler.append(header.text.replace('\n','').replace(" ", ""))
+    print(header.text.replace('\n','').replace(" ", ""))
+print("-------------------------")
+print("")
 
 # Row 1
 row1 = 0
