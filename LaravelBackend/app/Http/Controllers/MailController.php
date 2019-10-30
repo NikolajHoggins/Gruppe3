@@ -44,7 +44,7 @@ class MailController
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = $lektion->location.': '.$lektion->name.' at '.$lektion->hour;
-            $mail->Body = 'Hi '.$username.'. <br>You have '.$lektion->name.' at '.$lektion->hour.' in '.$lektion->loaction;
+            $mail->Body = 'Hi '.$username.'. <br>You have '.$lektion->name.' at '.$lektion->hour.' in '.$lektion->location;
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
         
             $mail->send();
