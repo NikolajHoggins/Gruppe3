@@ -6,7 +6,9 @@ namespace Gruppe3
     class Program
     {
         static void Main(string[] args)
-        { 
+        {
+            Console.WriteLine(Functions.GetUsers("h1"));
+            Console.ReadKey();
             bool isRunning = true;
             while (isRunning)
             {

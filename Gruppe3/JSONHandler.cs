@@ -6,9 +6,11 @@ using System.Text;
 
 namespace Gruppe3
 {
+
     class JSONHandler
     {
         public static string WriteJson(int type, string[] data) {
+            
             using (StreamWriter file = File.CreateText(@""+ Directory.GetCurrentDirectory() + "\\movie.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
