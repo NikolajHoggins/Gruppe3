@@ -11,10 +11,19 @@ class MailController
 {
     public function NotifyUser(){
         $lektioner = \App\Lektion::all();
-        dd($lektioner);
+        foreach($lektioner as $lektion){
+            $hoved = $lektion->hoved;
+            $users = \App\User::all()->where('hoved', $hoved);
+            foreach($users as $user){
+                SendMail($user, $lektion);
+            }
+        }
     }
-    public function SendMail($user, $class)
+    public function SendMail($user, $lektion)
     {
+        $usermail = $user->mail;
+        $username = $user->name;
+
         $mail = new PHPMailer();
         try {
             //Server settings
@@ -29,10 +38,10 @@ class MailController
         
             //Recipients
             $mail->setFrom(env('MAIL_USERNAME'), 'SKOLESKEMA');
-            $mail->addAddress('mollevip@gmail.com', 'Joe User');     // Add a recipient
+            $mail->addAddress($usermail, $username);     // Add a recipient
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Here is the subject';
+            $mail->Subject = 'Hi '.$username.' NOGGA';
             $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
         
