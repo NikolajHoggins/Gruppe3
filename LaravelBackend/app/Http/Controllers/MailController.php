@@ -13,9 +13,11 @@ class MailController
         $lektioner = \App\Lektion::all();
         foreach($lektioner as $lektion){
             $hoved = $lektion->hoved;
-            $users = \App\User::all()->where('hoved', $hoved)->get();
-            foreach($users as $user){
-                $this->SendMail($user, $lektion);
+            if(DB::table('users')->where('hoved', $hoved)->count() > 0){
+                $users = DB::table('users')->where('hoved', $hoved)->get();
+                foreach($users as $user){
+                    $this->SendMail($user, $lektion);
+                }
             }
         }
     }
