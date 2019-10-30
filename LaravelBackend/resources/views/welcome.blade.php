@@ -86,22 +86,20 @@
             <div class="title m-b-md">
                 Datahouse Skema!
             </div>
-            <table class="table" style="width: 100%">
+            <table class="table" style="width: 100%; text-align: left;">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">User Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Hovedforløb</th>
+                        <th scope="col">Lektion</th>
+                        <th scope="col">Klasselokale</th>
+                        <th scope="col">Klokkeslet</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($users as $user)
+                    @foreach ($lektioner as $lektion)
                     <tr>
-                        <td scope="row">{{$user->id}}</td>
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->email}}</td>
-                        <td>{{$user->hoved}}</td>
+                        <td>{{$lektion->name}}</td>
+                        <td>{{$lektion->location}}</td>
+                        <td>{{$lektion->hour}}</td>
                     </tr>   
                     @endforeach
                 </tbody>
