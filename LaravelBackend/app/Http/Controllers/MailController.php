@@ -13,7 +13,7 @@ class MailController
         $lektioner = \App\Lektion::all();
         foreach($lektioner as $lektion){
             $hoved = $lektion->hoved;
-            $users = \App\User::all()->where('hoved', $hoved);
+            $users = \App\User::all()->where('hoved', $hoved)->get();
             foreach($users as $user){
                 $this->SendMail($user, $lektion);
             }
@@ -23,7 +23,6 @@ class MailController
     {
         $usermail = $user->mail;
         $username = $user->name;
-        dd($usermail);
         $mail = new PHPMailer();
         try {
             //Server settings
